@@ -54,6 +54,8 @@ public class XMLParse {
 		 return list;
 	}
 	
+	
+	
 //	public static void main(String[] args) throws DocumentException {
 //		System.out.println();
 //		System.out.println(new XMLParse().getRootElement());
