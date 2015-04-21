@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/NewXMLSchema"
+	xmlns:tns="http://www.example.org/NewXMLSchema" elementFormDefault="qualified">
+	<xsd:element name="Resources">	
+        <xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Resource">
+					<xsd:complexType>
+						<xsd:sequence>
+							<!--资源类型 -->
+							<xsd:element name="resourceType" type="xsd:string" />
+							<!-- 资源具体模型 -->
+							<xsd:element name="resourceModel" type="xsd:string" />
+							<!-- 对应页面元素操作 -->
+							<xsd:element name="resourceRefPage">
+								<xsd:complexType>
+									<xsd:sequence>
+										<!--查找页面元素方式  -->
+										<xsd:element name="PageElementType" type="tns:PageElementTypeOption" />
+										<!--页面元素的属性值  -->
+										<xsd:element name="PageElementVar" type="xsd:string"/>
+										<!--页面元素操作节点，其中元素存在联动，需检查，可添加checkpoint 节点-->
+										<xsd:element name="PageHandler">
+											<xsd:complexType>
+												<xsd:sequence>
+													<!-- 页面元素检查点 -->
+													<xsd:element name="checkPoint" minOccurs="0">
+														<xsd:complexType>
+															<xsd:attribute name="elementType" type="tns:PageElementTypeOption"/>
+															<xsd:attribute name="elementVar" type="xsd:string"/>
+														</xsd:complexType>
+													</xsd:element>
+												</xsd:sequence>
+												<!-- 页面控件所需要调用的方法名 -->
+												<xsd:attribute name="method" type="xsd:string"/>
+												<!--是否有联动，有联动启用checkpoint节点 -->
+												<xsd:attribute name="isContact" type="xsd:boolean"/>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+									<!-- 数据id映射 ，与数据文件列名一致-->
+									<xsd:attribute name="refDataID" type="xsd:string" use="required"/>	
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+    </xsd:element>
+    
+   		<!-- 查找页面元素方式枚举 -->
+        <xsd:simpleType name="PageElementTypeOption">
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="id" />
+				<xsd:enumeration value="xpath" />
+				<xsd:enumeration value="css" />
+				<xsd:enumeration value="linktext" />
+				<xsd:enumeration value="name" />
+				<xsd:enumeration value="classname" />
+				<xsd:enumeration value="tagName" />
+				<xsd:enumeration value="partialLinkText" />
+			</xsd:restriction>
+		</xsd:simpleType>
+</xsd:schema>

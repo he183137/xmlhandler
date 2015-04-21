@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns="http://www.example.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:noNamespaceSchemaLocation="SingelResPageSchema.xsd">
+	 <resource>
+	     <resourceRefPage refDataID=''>
+	         <PageHandlerMethod ></PageHandlerMethod>
+	     </resourceRefPage>
+	 </resource>
+  <resource>
+      <resourceType>app</resourceType>
+   	<resourceModel>oracle</resourceModel>
+   	<resourceRefPage>
+   	    <PageElementType>id</PageElementType>
+   	    <PageElementVar>Hello</PageElementVar>
+   	    <PageHandlerMethod method="sendText" isContact="true">
+   	        <checkPoint elementType="id" elementVar="test"/> 
+   	    </PageHandlerMethod>
+   	</resourceRefPage>
+  </resource>
+</resources>
