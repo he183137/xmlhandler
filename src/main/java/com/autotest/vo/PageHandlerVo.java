@@ -5,18 +5,18 @@ package com.autotest.vo;
  * @version 1.0
  */
 public class PageHandlerVo {
-	private String methodNameString;
+	private String methodName;
 	// 操作元素的方法名称
 	private boolean isContact;
 	// 是否联动，启动检查点
 	private CheckPointVo checkPointVo;
 	// 检查点信息Vo
-	public String getMethodNameString() {
-		return methodNameString;
+	public String getMethodName() {
+		return methodName;
 	}
 
-	public void setMethodNameString(String methodNameString) {
-		this.methodNameString = methodNameString;
+	public void setMethodName(String methodName) {
+		this.methodName = methodName;
 	}
 
 	public boolean isContact() {

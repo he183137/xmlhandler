@@ -1,5 +1,9 @@
 package com.autotest.vo;
 
+import java.util.List;
+
+
+
 /**
  * @author HeP 资源发现信息VO
  * @version 1.0
@@ -10,12 +14,20 @@ public class ResourceVo {
 	// 资源类别
 	private String resourceModel;
 	// 资源具体模型
-	private RefPageVo refPageVo;
+	private List <RefPageVo> refPageVoList;
+	// 所有步骤映射页面操作vo集合 
 
-	// 映射页面操作vo
 
 	public String getResourceType() {
 		return resourceType;
+	}
+
+	public List<RefPageVo> getRefPageVoList() {
+		return refPageVoList;
+	}
+
+	public void setRefPageVoList(List<RefPageVo> refPageVoList) {
+		this.refPageVoList = refPageVoList;
 	}
 
 	public void setResourceType(String resourceType) {
@@ -30,11 +42,5 @@ public class ResourceVo {
 		this.resourceModel = resourceModel;
 	}
 
-	public RefPageVo getRefPageVo() {
-		return refPageVo;
-	}
 
-	public void setRefPageVo(RefPageVo refPageVo) {
-		this.refPageVo = refPageVo;
-	}
 }
