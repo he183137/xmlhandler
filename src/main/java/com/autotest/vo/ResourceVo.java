@@ -10,7 +10,11 @@ import java.util.List;
  * 
  */
 public class ResourceVo {
+	
+	private String resName;
+	//发现资源名称
 	private String resourceType;
+	
 	// 资源类别
 	private String resourceModel;
 	// 资源具体模型
@@ -18,6 +22,13 @@ public class ResourceVo {
 	// 所有步骤映射页面操作vo集合 
 
 
+	public String getResName() {
+		return resName;
+	}
+
+	public void setResName(String resName) {
+		this.resName = resName;
+	}
 	public String getResourceType() {
 		return resourceType;
 	}

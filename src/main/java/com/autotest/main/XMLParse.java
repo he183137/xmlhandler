@@ -59,10 +59,14 @@ public class XMLParse {
 		 while (iterator.hasNext()) {
 			ResourceVo rVo = new ResourceVo();
 			Element resElement = iterator.next();
+			
+			String resName = resElement.attributeValue("resName");
+			//资源名称
 			String resType = resElement.elementTextTrim("resourceType");
 			//资源类型
 			String resModel = resElement.elementTextTrim("resourceModel");
 			//资源具体模型
+			rVo.setResName(resName);
 			rVo.setResourceModel(resModel);
 			rVo.setResourceType(resType);
 			List<RefPageVo> refPageVos = encapsulateRefPageVoList(resElement.element("resourceRefPage"));

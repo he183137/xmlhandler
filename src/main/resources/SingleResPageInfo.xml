@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns="http://www.example.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	 xsi:noNamespaceSchemaLocation="SingelResPageSchema.xsd">
-  <resource>
+  <resource resName="oracle_1">
     <resourceType>app</resourceType>
    	<resourceModel>oracle</resourceModel>
    	<resourceRefPage>
@@ -12,7 +12,7 @@
    	    </PageHandlerMethod>
    	</resourceRefPage>
   </resource>
-  <resource>
+  <resource resName="mysql_1">
     <resourceType>app</resourceType>
    	<resourceModel>mysql</resourceModel>
    	<resourceRefPage refDataID="">
